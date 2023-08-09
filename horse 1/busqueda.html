@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Búsqueda de Razas de Caballos</title>
+    <link rel="stylesheet" href="css/estilobusqueda.css">
+</head>
+<body>
+    <header>
+        <h1>¿Búsqueda de Razas de Caballos?</h1> 
+        <img class="logo" src="img/cart.jpg" alt="logo">
+    </header>
+
+   
+
+    <main>
+        <section>
+            <center><h2>Que raza de caballo buscas</h2>
+            <form>
+                <label for="raza">Seleccione una raza:</label>
+                <select id="raza" name="raza">
+                    <option value="">Seleccione una opción</option>
+                    <option value="Caballo Fusaichi Pegasus">Caballo Fusaichi Pegasus</option>
+                    <option value="Caballo Shareef Dancer">Caballo Shareef Dancer</option>
+                    <option value="Caballo Totilas">Caballo Totilas</option>
+                    <option value="Caballo Green Monkey">Caballo Green Monkey</option>
+                    <option value="Caballo Palloubet Dhalong">Caballo Palloubet Dhalong</option>
+                    <!-- Agrega más opciones de razas de caballos -->
+                </select>
+                <button type="button" onclick="mostrarRazaSeleccionada()">Mostrar contenido</button>
+            </form><center>
+
+            <div id="resultado">
+                <!-- Aquí se mostrará el contenido de la raza seleccionada -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Pie de página - Derechos reservados &copy; 2023</p>
+    </footer>
+
+    <script>
+        function mostrarRazaSeleccionada() {
+            var selectElement = document.getElementById('raza');
+            var resultadoElement = document.getElementById('resultado');
+            var selectedRaza = selectElement.value;
+
+            // Limpia el contenido anterior
+            resultadoElement.innerHTML = '';
+
+            // Muestra el contenido de la raza seleccionada si se ha elegido una opción válida
+            if (selectedRaza) {
+                switch (selectedRaza) {
+                    case 'Caballo Fusaichi Pegasus':
+                        resultadoElement.innerHTML =  '<h3>Caballo Fusaichi Pegasus</h3><p>Es considerado el caballo más caro del mundo, fue vendido en 70.000 millones de dólares, además de ser reconocido por su talento ya que ganó el Derby de Kentucky en el año 2000. Su nombre es una combinación del nombre de su propietario, “Fusao”, y la palabra japonesa para uno, “ichi”, que significa el # 1 o el mejor. Ganó 2 millones de dólares durante su vida activa, en la actualidad fue vendido a un criador irlandés y tiene una cuota de 7000 dólares para su manutención.</p>';
+                        break; 
+                    case 'Caballo Shareef Dancer':
+                        resultadoElement.innerHTML = '<h3>Caballo Shareef Dancer</h3><p>Fue reconocido por ser el mejor caballo de carreras y ganar el Torneo Dubai Millennium,  además de ser seleccionado como uno de los mejores sementales del mundo, obteniendo ganancias mayores a 2 millones de dólares por sus crías. Fue comprado por 40 millones de dólares en 1983 por Emir de Dubai, pasando hacer el 2 caballo más caro del mundo.</p>';
+                        break;
+                    case 'Caballo Totilas':
+                        resultadoElement.innerHTML = '<h3>Caballo Totilas</h3><p>Fue vendido por 21 millones de dólares, y fue catalogado como el más destacado caballo de Doma Clásica en la Orbe, lo que significa que llevó un entrenamiento metódico y equilibrado formándolo como atleta. Gracias a su potencial ganó numerosos récords anotando más de 90 puntos en una competencia. Después de su grandes victorias fue vendido en el 2011 a una propiedad alemana, que con los años fue denunciada por maltrato animal, lo que significó la decadencia de su carrera.</p>';
+                        break;
+                    case 'Caballo Green Monkey':
+                        resultadoElement.innerHTML = '<h3>Caballo Green Monkey</h3><p>Se destaca por ser un ejemplar de pura sangre raza inglesa, desarrollada en el siglo XVIII en Inglaterra, es descendiente Northern Dancer quienes lo enfocan a crear corredores de distancia. Es el más caro del mundo en su categoría vendido en una subasta por 16 millones de dólares, pero luego de 3 carreras tuvo que retirarse logrando ganar una suma de 10.4 millones de dólares. Después fue usado como semental y su precio por cría es de 5.000 dólares.</p>';
+                        break;
+                    case 'Caballo Palloubet Dhalong':
+                        resultadoElement.innerHTML = '<h3>Caballo Palloubet Dhalong</h3><p>Es un caballo de raza francesa nacido en el 2003 que ha tenido una carrera exitosa desde su inicio, fue nombrado revelación mundial del circuito de obstáculos en 2012. Este ejemplar fue vendido a sus 10 años de edad por 15 millones de dólares al entrenador del equipo de salto de Qatar, convirtiéndolo en el caballo de salto más caro vendido en la historia. En al actualidad es pieza clave para las victorias de Janika Sprunger, una piloto olímpica suiza.</p>';
+                        break;
+                    default:
+                        resultadoElement.innerHTML = '<p>No se ha seleccionado ninguna raza.</p>';
+                        break;
+                }
+            } else {
+                resultadoElement.innerHTML = '<p>No se ha seleccionado ninguna raza.</p>';
+            }
+        }
+    </script>
+</body>
+</html>
